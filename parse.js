@@ -171,7 +171,7 @@ const MAILTO_XMPP_RE = /^(?:mailto:[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-
 // Trailing-trim for www./scheme URLs, applied until stable: drops
 // trailing punctuation, unbalanced ')', and a trailing named entity
 // (&word;) as a whole (a numeric &#...; keeps its digits, loses ';').
-const BACKPEDAL_RE = /^(?:[^?!.,:;*_'"~()&]+|\([^)]*\)|&(?![a-zA-Z0-9]+;$)|[?!.,:;*_'\"~)]+(?!$))+/;
+const BACKPEDAL_RE = /^(?:[^?!.,:;*_'~()&\x22]+|\([^)]*\)|&(?![a-zA-Z0-9]+;$)|[?!.,:;*_'\"~)]+(?!$))+/;
 
 // Emphasis masking (marked's #n): two regex passes over the raw text.
 // Pass 1 finds code spans (loose: inner backticks allowed) and escapes;
